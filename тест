@@ -1,0 +1,37 @@
+base - 
+
+Entities : 
+
+User -
+username
+password
+
+Conference - 
+name
+description
+address
+time frame 
+
+Hall -
+name
+seats
+
+Session - 
+name
+desc
+time frame
+(association to a certain speaker)
+
+Speaker - 
+name desc
+profile picture
+
+|||||||||||||
+
+Functionation : 
+
+User - 
+view all events
+view conference (by id probably)
+assert attendance (to a centain conference)
+?maximum programme?
