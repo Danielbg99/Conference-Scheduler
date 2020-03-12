@@ -1,8 +1,6 @@
 package conferencescheduler.conferencescheduler.data.entities;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "halls")
@@ -11,6 +9,14 @@ public class Hall extends BaseEntity{
     private String hallName;
     @Column(name = "capacity")
     private Integer capacity;
+
+    @OneToOne(optional = false)
+    @JoinColumn(name = "conference_id", referencedColumnName = "id")
+    private Conference conference;
+
+    @OneToOne
+    @JoinColumn(name = "session_id", referencedColumnName = "id")
+    private Session session;
 
     public Hall() {
     }

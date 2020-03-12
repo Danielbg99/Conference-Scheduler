@@ -2,6 +2,7 @@ package conferencescheduler.conferencescheduler.data.entities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import java.time.LocalDateTime;
 
@@ -14,6 +15,9 @@ public class Session extends BaseEntity{
     private String description;
     @Column(name = "time_frame")
     private LocalDateTime timeFrame;
+
+    @OneToOne(mappedBy = "session", targetEntity = Hall.class)
+    private Hall hall;
 
     public Session() {
     }
